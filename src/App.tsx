@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function OpenWebTTSLanding() {
   const [scrollY, setScrollY] = useState(0);
@@ -12,6 +12,7 @@ export default function OpenWebTTSLanding() {
 
   useEffect(() => {
     const interval = setInterval(() => {
+      console.debug(activeFeature);
       setActiveFeature((prev) => (prev + 1) % 4);
     }, 3000);
     return () => clearInterval(interval);
